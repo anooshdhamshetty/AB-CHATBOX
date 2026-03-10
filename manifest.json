@@ -1,0 +1,37 @@
+{
+  "manifest_version": 3,
+  "name": "AB-CHATBOX",
+  "version": "1.0.0",
+  "description": "🎮 Gaming-themed AI chatbox with voice input, page summarization, and multiple export formats (PDF, DOCX, HTML, TXT)",
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "storage"
+  ],
+  "host_permissions": [
+    "https://api.groq.com/*"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icon16.svg",
+      "48": "icon48.svg",
+      "128": "icon128.svg"
+    },
+    "default_title": "AB-CHATBOX - AI Assistant"
+  },
+  "icons": {
+    "16": "icon16.svg",
+    "48": "icon48.svg",
+    "128": "icon128.svg"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["jspdf.min.js", "FileSaver.min.js"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}
